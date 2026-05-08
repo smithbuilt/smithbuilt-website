@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 480 100"
+     role="img"
+     aria-label="Smithbuilt — web, app and accessibility development">
+  <title>Smithbuilt (dark variant)</title>
+  <desc>Smithbuilt logo for dark backgrounds: cream-framed keycap with terracotta center and cream asterisk, beside the Smithbuilt wordmark in cream and tagline in muted gray.</desc>
+
+  <g transform="translate(0, 15)">
+    <rect x="0" y="0" width="70" height="70" rx="10" fill="#FBF8F2"/>
+    <rect x="3" y="3" width="64" height="64" rx="8" fill="#C25524"/>
+    <g stroke="#FBF8F2" stroke-width="2.8" stroke-linecap="round" transform="translate(35, 35)">
+      <line x1="0" y1="-15" x2="0" y2="15"/>
+      <line x1="-13" y1="-7.5" x2="13" y2="7.5"/>
+      <line x1="-13" y1="7.5" x2="13" y2="-7.5"/>
+    </g>
+  </g>
+
+  <text x="90" y="60"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="40"
+        font-weight="500"
+        fill="#FBF8F2"
+        letter-spacing="-1">Smith<tspan font-style="italic" fill="#D26329">built</tspan>.</text>
+
+  <text x="90" y="82"
+        font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif"
+        font-size="10"
+        font-weight="500"
+        fill="#888780"
+        letter-spacing="4">WEB · APP · ACCESSIBILITY</text>
+</svg>

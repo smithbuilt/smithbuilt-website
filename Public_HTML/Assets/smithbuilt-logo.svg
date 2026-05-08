@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 480 100"
+     role="img"
+     aria-label="Smithbuilt — web, app and accessibility development">
+  <title>Smithbuilt</title>
+  <desc>Smithbuilt logo: a charcoal keycap with a terracotta center and cream asterisk, beside the Smithbuilt wordmark and tagline.</desc>
+
+  <!-- ============================================
+       MARK · keycap with asterisk
+       70x70, vertically centered to the wordmark optical center
+       ============================================ -->
+  <g transform="translate(0, 15)">
+    <!-- Outer charcoal frame -->
+    <rect x="0" y="0" width="70" height="70" rx="10" fill="#1A1A1A"/>
+    <!-- Inner terracotta panel (3px frame on all sides) -->
+    <rect x="3" y="3" width="64" height="64" rx="8" fill="#C25524"/>
+    <!-- Asterisk glyph in cream -->
+    <g stroke="#FBF8F2" stroke-width="2.8" stroke-linecap="round" transform="translate(35, 35)">
+      <line x1="0" y1="-15" x2="0" y2="15"/>
+      <line x1="-13" y1="-7.5" x2="13" y2="7.5"/>
+      <line x1="-13" y1="7.5" x2="13" y2="-7.5"/>
+    </g>
+  </g>
+
+  <!-- ============================================
+       WORDMARK · Smithbuilt.
+       Sized to align mark center with wordmark optical center
+       ============================================ -->
+  <text x="90" y="60"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="40"
+        font-weight="500"
+        fill="#1A1A1A"
+        letter-spacing="-1">Smith<tspan font-style="italic" fill="#A8451F">built</tspan>.</text>
+
+  <!-- ============================================
+       TAGLINE
+       ============================================ -->
+  <text x="90" y="82"
+        font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif"
+        font-size="10"
+        font-weight="500"
+        fill="#5F5E5A"
+        letter-spacing="4">WEB · APP · ACCESSIBILITY</text>
+</svg>

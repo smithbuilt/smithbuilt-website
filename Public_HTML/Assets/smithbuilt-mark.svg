@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 70 70"
+     role="img"
+     aria-label="Smithbuilt mark">
+  <title>Smithbuilt mark</title>
+  <desc>Charcoal keycap with terracotta center and cream asterisk.</desc>
+
+  <rect x="0" y="0" width="70" height="70" rx="10" fill="#1A1A1A"/>
+  <rect x="3" y="3" width="64" height="64" rx="8" fill="#C25524"/>
+  <g stroke="#FBF8F2" stroke-width="2.8" stroke-linecap="round" transform="translate(35, 35)">
+    <line x1="0" y1="-15" x2="0" y2="15"/>
+    <line x1="-13" y1="-7.5" x2="13" y2="7.5"/>
+    <line x1="-13" y1="7.5" x2="13" y2="-7.5"/>
+  </g>
+</svg>

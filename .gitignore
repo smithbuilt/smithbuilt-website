@@ -1,0 +1,20 @@
+# Claude Code local config (machine-specific — never commit)
+.claude/
+
+# Local-only reference material (descriptions of other sites, screenshots, etc.)
+Markdowns/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE per-developer settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and temp files
+*.log
+*.tmp

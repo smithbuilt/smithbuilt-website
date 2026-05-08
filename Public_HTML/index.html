@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smithbuilt — Custom websites and applications</title>
+<meta name="description" content="Custom websites and applications. Built by hand, in Doha — by someone who has been building things since the 1980s.">
+
+<link rel="icon" href="Assets/smithbuilt-mark.svg" type="image/svg+xml">
+<link rel="icon" href="Assets/smithbuilt-mark-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="Assets/smithbuilt-mark-180.png">
+
+<link rel="stylesheet" href="styles.css">
+<script defer src="script.js"></script>
+</head>
+<body>
+
+<!-- LOAD SCREEN: covers the page on first paint, animates the logo in, then fades out -->
+<div class="load-screen" id="loadScreen" aria-hidden="true">
+  <svg class="load-screen__noise" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <filter id="noiseFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="3"/>
+      <feColorMatrix values="0 0 0 0 0.76  0 0 0 0 0.33  0 0 0 0 0.14  0 0 0 0.22 0"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+  </svg>
+  <div class="load-screen__texture"></div>
+  <div class="load-screen__logo">
+    <svg class="logo-svg" viewBox="0 0 480 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Smithbuilt">
+      <g class="logo-mark" transform="translate(0, 15)">
+        <rect class="logo-frame" x="0" y="0" width="70" height="70" rx="10" fill="#FBF8F2"/>
+        <rect class="logo-panel" x="3" y="3" width="64" height="64" rx="8" fill="#C25524"/>
+        <g class="logo-asterisk" stroke="#FBF8F2" stroke-width="2.8" stroke-linecap="round" transform="translate(35, 35)">
+          <line x1="0" y1="-15" x2="0" y2="15"/>
+          <line x1="-13" y1="-7.5" x2="13" y2="7.5"/>
+          <line x1="-13" y1="7.5" x2="13" y2="-7.5"/>
+        </g>
+      </g>
+      <text class="logo-wordmark" x="90" y="60" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="500" fill="#FBF8F2" letter-spacing="-1">Smith<tspan font-style="italic" fill="#C25524">built</tspan>.</text>
+      <text class="logo-tagline" x="90" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="10" font-weight="500" fill="#888780" letter-spacing="4">WEB · APP · ACCESSIBILITY</text>
+    </svg>
+  </div>
+</div>
+
+<!-- CURSOR GLOW: warm halo that follows the pointer (auto-disabled on touch) -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- HEADER: small mark + menu toggle, both fixed -->
+<header class="site-header">
+  <a class="site-header__home" href="#hero" aria-label="Smithbuilt — top of page">
+    <img class="site-header__logo site-header__logo--dark" src="Assets/smithbuilt-logo-dark.svg" alt="Smithbuilt">
+    <img class="site-header__logo site-header__logo--light" src="Assets/smithbuilt-logo.svg" alt="" aria-hidden="true">
+  </a>
+  <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuDrawer">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- MENU DRAWER: site directory + contact -->
+<nav class="menu-drawer" id="menuDrawer" aria-hidden="true">
+  <div class="menu-drawer__inner">
+    <ul class="menu-drawer__list">
+      <li><a href="#hero"><span>01</span> Hello</a></li>
+      <li><a href="#about"><span>02</span> About</a></li>
+      <li><a href="#work"><span>03</span> Work</a></li>
+      <li><a href="#services"><span>04</span> What I build</a></li>
+      <li><a href="#contact"><span>05</span> Get in touch</a></li>
+    </ul>
+    <div class="menu-drawer__contact">
+      <a href="mailto:smithbuilt@gmail.com">smithbuilt@gmail.com</a>
+      <span class="menu-drawer__sep">·</span>
+      <a href="https://wa.me/" rel="noopener">WhatsApp</a>
+    </div>
+    <p class="menu-drawer__footer">© 2026 Smithbuilt — Built in Doha, Qatar</p>
+  </div>
+</nav>
+
+<main>
+
+  <!-- SCENE 1: HERO -->
+  <section class="scene scene--hero" id="hero">
+    <div class="scene__photo" aria-hidden="true">
+      <div class="hero-photos">
+        <img class="hero-photo is-active" src="Assets/Photos/1984 Computer.png" alt="">
+        <img class="hero-photo" src="Assets/Photos/2000 Italy.png" alt="" loading="lazy">
+        <img class="hero-photo" src="Assets/Photos/2002 Garden.png" alt="" loading="lazy">
+        <img class="hero-photo" src="Assets/Photos/2005 Skiing.png" alt="" loading="lazy">
+        <img class="hero-photo" src="Assets/Photos/2012 travel.png" alt="" loading="lazy">
+        <img class="hero-photo" src="Assets/Photos/2016 Platform.png" alt="" loading="lazy">
+        <img class="hero-photo" src="Assets/Photos/2018 Offshore Kitchen.png" alt="" loading="lazy">
+        <img class="hero-photo" src="Assets/Photos/2024 Diner Doha.png" alt="" loading="lazy">
+      </div>
+    </div>
+    <div class="scene__content">
+      <p class="scene__kicker">SMITHBUILT — N°.01</p>
+      <h1 class="scene__title">Digital solutions, crafted by <em>experience</em>.</h1>
+      <p class="scene__subtitle">
+        Thoughtful websites and digital tools. Shaped by decades of curiosity,
+        creativity, and real-world experience. Built for the modern web.
+      </p>
+      <ul class="trust-strip">
+        <li><strong>Forty years</strong> building things</li>
+        <li><strong>One craftsman</strong>, end to end</li>
+        <li><strong>Direct contact</strong>, real timelines</li>
+      </ul>
+      <div class="scene__cta">
+        <a class="btn btn--primary" href="#work">View work</a>
+        <a class="btn btn--ghost" href="#contact">Start a project</a>
+      </div>
+    </div>
+    <div class="scene__indicator" aria-hidden="true">scroll</div>
+  </section>
+
+  <!-- SCENE 2: ABOUT -->
+  <section class="scene scene--about" id="about">
+    <div class="scene__content">
+      <p class="scene__kicker">N°.02 — ABOUT</p>
+      <h2 class="scene__title">From a Commodore 64 to code in Doha.</h2>
+      <ol class="timeline">
+        <li><span class="timeline__year">1980s</span><span>First home computers — VIC-20, Commodore 64. Discovery and play.</span></li>
+        <li><span class="timeline__year">1990s</span><span>Fine dining and culinary school. Kitchens across Canada.</span></li>
+        <li><span class="timeline__year">2000</span><span>Founded an adventure-tourism marketing company in the Canadian Rockies. Built realbigadventures.com during the dotcom era.</span></li>
+        <li><span class="timeline__year">2000s</span><span>Trained in kitchens in Thailand, Malaysia, the Middle East.</span></li>
+        <li><span class="timeline__year">2010s</span><span>Thirteen years in offshore oil &amp; gas — running catering and accommodation for some of the world's largest operations.</span></li>
+        <li><span class="timeline__year">Now</span><span>In Doha. Back to building software, with the discipline picked up along the way.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- SCENE 3: WORK -->
+  <section class="scene scene--work" id="work">
+    <div class="scene__content">
+      <p class="scene__kicker">N°.03 — RECENT WORK</p>
+      <h2 class="scene__title">A few projects.</h2>
+      <ul class="work-grid">
+        <li class="work-card">
+          <div class="work-card__media" aria-hidden="true">[ Chiselpeak ]</div>
+          <p class="work-card__year">2026</p>
+          <h3 class="work-card__title">Chisel Peak Woodworking</h3>
+          <p class="work-card__blurb">Portfolio &amp; lead generation for a one-man woodworking shop in Muskoka, Ontario.</p>
+          <a class="work-card__link" href="https://chiselpeakwoodworking.ca" rel="noopener">visit site →</a>
+        </li>
+        <li class="work-card">
+          <div class="work-card__media" aria-hidden="true">[ Throbix ]</div>
+          <p class="work-card__year">2026 · in dev</p>
+          <h3 class="work-card__title">Throbix</h3>
+          <p class="work-card__blurb">A calm, private migraine journal — designed for people who can't look at a bright screen.</p>
+          <a class="work-card__link" href="https://throbix.com" rel="noopener">visit site →</a>
+        </li>
+        <li class="work-card">
+          <div class="work-card__media" aria-hidden="true">[ Smitheats ]</div>
+          <p class="work-card__year">2026</p>
+          <h3 class="work-card__title">Smitheats</h3>
+          <p class="work-card__blurb">A family recipe site — testing ground for a larger network of regional eats sites.</p>
+          <a class="work-card__link" href="https://smitheats.ca" rel="noopener">visit site →</a>
+        </li>
+        <li class="work-card">
+          <div class="work-card__media" aria-hidden="true">[ Real Big Adventures ]</div>
+          <p class="work-card__year">2002 · preserved</p>
+          <h3 class="work-card__title">Real Big Adventures</h3>
+          <p class="work-card__blurb">My first commercial site — adventure tourism in the Rockies. Salvaged from the Wayback Machine, kept online as an artifact.</p>
+          <a class="work-card__link" href="https://realbigadventures.com" rel="noopener">visit site →</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SCENE 4: WHAT I BUILD -->
+  <section class="scene scene--services" id="services">
+    <div class="scene__content">
+      <p class="scene__kicker">N°.04 — WHAT I BUILD</p>
+      <h2 class="scene__title">Websites, web apps, and the occasional medical project.</h2>
+      <ul class="services-list">
+        <li>
+          <h3>Custom websites</h3>
+          <p>For businesses that need a real one, not a template. Designed and coded by hand.</p>
+        </li>
+        <li>
+          <h3>Web applications</h3>
+          <p>When a website isn't enough — internal tools, dashboards, scheduling, anything bespoke.</p>
+        </li>
+        <li>
+          <h3>E-commerce</h3>
+          <p>Stripe, Shopify, custom carts. The right tool for what you actually sell.</p>
+        </li>
+        <li>
+          <h3>Maintenance &amp; support</h3>
+          <p>Keep what you have running. I'll take over from your last developer.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SCENE 5: CONTACT -->
+  <section class="scene scene--contact" id="contact">
+    <div class="scene__content">
+      <p class="scene__kicker">N°.05 — GET IN TOUCH</p>
+      <h2 class="scene__title">Have a project in mind?</h2>
+      <p class="scene__subtitle">Email is best for project discussions. WhatsApp works for quick questions.</p>
+      <div class="contact-methods">
+        <a class="contact-method" href="mailto:smithbuilt@gmail.com">
+          <span class="contact-method__label">Email</span>
+          <span class="contact-method__value">smithbuilt@gmail.com</span>
+        </a>
+        <a class="contact-method" href="https://wa.me/" rel="noopener">
+          <span class="contact-method__label">WhatsApp</span>
+          <span class="contact-method__value">[ your number ]</span>
+        </a>
+      </div>
+      <p class="footer-line">© 2026 Smithbuilt — Built in Doha, Qatar.</p>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>

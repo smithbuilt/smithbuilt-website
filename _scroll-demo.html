@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scroll modes demo — delete after viewing</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html.snap { scroll-snap-type: y mandatory; }
+  body { font: 16px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
+
+  header {
+    position: fixed; inset: 0 0 auto 0;
+    padding: 14px 20px;
+    background: #1a1a1a; color: #fbf8f2;
+    display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+    z-index: 10;
+  }
+  header .label { opacity: .7; font-size: 14px; }
+  header .hint { margin-left: auto; opacity: .55; font-size: 13px; }
+  button {
+    padding: 7px 14px; border-radius: 4px; border: 1px solid #fbf8f2;
+    background: transparent; color: #fbf8f2; font: inherit; cursor: pointer;
+  }
+  button.active { background: #c25524; border-color: #c25524; }
+
+  section {
+    height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 20px; text-align: center;
+  }
+  html.snap section { scroll-snap-align: start; }
+
+  section:nth-child(1) { background: #1a1a1a; color: #fbf8f2; }
+  section:nth-child(2) { background: #fbf8f2; color: #1a1a1a; }
+  section:nth-child(3) { background: #c25524; color: #fbf8f2; }
+  section:nth-child(4) { background: #fbf8f2; color: #1a1a1a; }
+  section:nth-child(5) { background: #1a1a1a; color: #fbf8f2; }
+
+  .num   { font-size: clamp(120px, 22vw, 240px); font-weight: 700; opacity: .12; line-height: 1; }
+  h2     { font-size: clamp(24px, 4vw, 36px); margin-top: -30px; font-weight: 500; letter-spacing: -0.5px; }
+  p      { margin-top: 14px; max-width: 520px; opacity: .8; }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="label">Mode:</span>
+  <button id="normal" class="active">Normal scroll</button>
+  <button id="snap">Snap scroll</button>
+  <span class="hint">Try mouse wheel, trackpad, and arrow keys in each mode.</span>
+</header>
+
+<section><div class="num">1</div><h2>Hero scene</h2><p>Scroll down. Notice how the page moves between sections.</p></section>
+<section><div class="num">2</div><h2>About scene</h2><p>In Normal mode you can stop wherever you want. In Snap mode the page pulls you to the next section.</p></section>
+<section><div class="num">3</div><h2>Work scene</h2><p>Try scrolling slowly, then fast. Try a single trackpad flick.</p></section>
+<section><div class="num">4</div><h2>Services scene</h2><p>Now scroll back up. Notice the difference between modes there too.</p></section>
+<section><div class="num">5</div><h2>Contact scene</h2><p>Toggle the buttons at the top to compare. The same content, two scroll feels.</p></section>
+
+<script>
+  const root = document.documentElement;
+  const normal = document.getElementById('normal');
+  const snap = document.getElementById('snap');
+  normal.addEventListener('click', () => {
+    root.classList.remove('snap');
+    normal.classList.add('active');
+    snap.classList.remove('active');
+  });
+  snap.addEventListener('click', () => {
+    root.classList.add('snap');
+    snap.classList.add('active');
+    normal.classList.remove('active');
+  });
+</script>
+</body>
+</html>
