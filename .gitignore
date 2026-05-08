@@ -18,3 +18,9 @@ desktop.ini
 # Logs and temp files
 *.log
 *.tmp
+
+# FTP deploy credentials — NEVER commit (contains password)
+ftp-credentials.txt
+
+# WinSCP upload log
+upload-log.txt
